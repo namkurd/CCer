@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --purple: #5b3fa8;
+  --purple-light: #8e74d6;
+  --green: #3f8f45;
+  --green-light: #8cc084;
+  --cream: #f4f0e6;
+  --ink: #1f1b2e;
+  --true: #3f8f45;
+  --false: #c2413a;
+  --contested: #d9a400;
+  --void: #8a8a8a;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-full px-5 py-2.5 font-heading font-bold transition-colors;
+  }
+  .btn-primary {
+    @apply btn bg-purple text-white hover:bg-purple-light;
+  }
+  .btn-secondary {
+    @apply btn border-2 border-purple text-purple hover:bg-purple hover:text-white;
+  }
+  .chip-subject { @apply rounded-md bg-green-light/40 px-2 py-0.5 text-green; }
+  .chip-predicate { @apply rounded-md bg-purple-light/25 px-2 py-0.5 text-purple; }
+  .chip-deadline { @apply rounded-md bg-white px-2 py-0.5 ring-1 ring-ink/10; }
+}
